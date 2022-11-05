@@ -1,0 +1,10 @@
+CREATE TABLE cars (
+  id UUID NOT NULL,
+   model VARCHAR(255) NOT NULL,
+   color VARCHAR(255) NOT NULL,
+   number VARCHAR(255) NOT NULL,
+   user_id UUID,
+   CONSTRAINT pk_cars PRIMARY KEY (id)
+);
+
+ALTER TABLE cars ADD CONSTRAINT FK_CARS_ON_USER FOREIGN KEY (user_id) REFERENCES users (id);

@@ -1,0 +1,10 @@
+docker run \
+  --name lab-postgres \
+  --detach \
+  --restart=unless-stopped \
+  --env POSTGRES_PASSWORD=ivt93 \
+  --env POSTGRES_USER=ivt93 \
+  --env POSTGRES_DB=spring_lab_db \
+  --volume spring-lab-data:/var/lib/postgresql/data \
+  --publish 5432:5432 \
+  postgres:14.4
